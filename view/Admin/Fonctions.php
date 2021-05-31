@@ -3,9 +3,9 @@
 
 function BDDConnexionPDO()
 {
-$PARAM_hote='esboncbbonchamp.mysql.db';  $PARAM_port='';
-$PARAM_nom_bd='esboncbbonchamp';  $PARAM_utilisateur='esboncbbonchamp'; 
-$PARAM_mot_passe='ESBmeziere53'; 
+$PARAM_hote='localhost';  $PARAM_port='';
+$PARAM_nom_bd='esbtdt';  $PARAM_utilisateur='root'; 
+$PARAM_mot_passe=''; 
 try
 {      $connexion = new PDO('mysql:host='.$PARAM_hote.'; dbname='.$PARAM_nom_bd, $PARAM_utilisateur, $PARAM_mot_passe);
        $connexion->exec("SET CHARACTER SET utf8");
