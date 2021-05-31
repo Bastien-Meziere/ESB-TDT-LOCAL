@@ -28,7 +28,7 @@ class Connexion extends Controller
             $_SESSION['admin']=$tableRes['variable']['admin'];
             $this->render('admin');
         }else{
-            header('Location: http://localhost/MVC%20ESB/connexion');
+            header('Location: http://localhost/ESB-TDT-LOCAL/connexion');
         }
         
         //$this-> set($tableRes);
@@ -38,13 +38,13 @@ class Connexion extends Controller
     function logout($personne=null){
 
         session_destroy();
-        header('Location: http://localhost/MVC%20ESB/connexion');
+        header('Location: http://localhost/ESB-TDT-LOCAL/connexion');
         exit;
     }
 
     function retour($personne=null){
 
-        header('Location: http://localhost/MVC%20ESB/connexion/connect');
+        header('Location: http://localhost/ESB-TDT-LOCAL/connexion/connect');
         exit;
     }
     }
