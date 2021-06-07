@@ -52,6 +52,7 @@ $lesEvenements->setFetchMode(PDO::FETCH_OBJ);
 <!-- Tableau des photos des équipes -->
 <table border=1 class="col-12 margeproduit">
 <tr>           
+                    <th class="txt-center"> <b> Photo </th>
                     <th> <b> Numéro Photo </th>
                     <th> <b> Nom Photo </th>
                     <th class="txt-center"> Supprimer </th> 
@@ -60,8 +61,9 @@ $lesEvenements->setFetchMode(PDO::FETCH_OBJ);
     
     while( $UnEvenement = $lesEvenements->fetch() ) 
     { 
-         echo "<td>".$UnEvenement->id_photoevenement."</td>";
-         echo "<td>".$UnEvenement->img_photoevenement."</td>";
+        echo "<tr> <td align='center'> <img src='../asset/images/".$UnEvenement->img_photoevenement."' width='50'> </td>";
+        echo "<td>".$UnEvenement->id_photoevenement."</td>";
+        echo "<td>".$UnEvenement->img_photoevenement."</td>";
 
        // <a href='gestionproduitmodif?num=".$UnProduit->id_produit."'><img src='../asset/images/Modifier.png'></a></td>";
         echo "<td align='center'> <form action='gestionevenementsuppimage' method='POST'>

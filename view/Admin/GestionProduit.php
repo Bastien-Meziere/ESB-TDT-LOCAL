@@ -19,11 +19,11 @@ $lesProduitss->setFetchMode(PDO::FETCH_OBJ);
 <!-- Tableau des produits -->
 <table border=1 class="col-12 margeproduit titreadmin">
 <tr>           
-                    <th class="txt-center"> <b> Photo </th>
                     <th> <b> Numéro </th>
                     <th> <b> Désignation </th>
                     <th> <b> Description </th>
                     <th> <b> Prix </th>
+                    <th> <b> Numéro Photo </th>
                     <th class="txt-center"> Modifier </th> 
                     <th class="txt-center"> Supprimer </th> 
  </tr>
@@ -31,11 +31,11 @@ $lesProduitss->setFetchMode(PDO::FETCH_OBJ);
     
 	while( $UnProduit = $lesProduits->fetch() ) 
 	{ 
-         echo "<tr> <td align='center'> <img src='../asset/images/".$UnProduit->id_illustration."' width='40'> </td>";
-         echo "<td>".$UnProduit->id_produit."</td>";
-         echo "<td>".$UnProduit->lib_produit."</td>";
-         echo "<td>".$UnProduit->desc_produit."</td>";
-         echo "<td align='left'> ".$UnProduit->prix_produit." €</td>";
+        echo "<td>".$UnProduit->id_produit."</td>";
+        echo "<td>".$UnProduit->lib_produit."</td>";
+        echo "<td>".$UnProduit->desc_produit."</td>";
+        echo "<td align='left'> ".$UnProduit->prix_produit." €</td>";
+        echo "<td>".$UnProduit->id_illustration."</td>";
   		echo "<td align='center'> <form action='gestionproduitmodif' method='POST'> 
         <input type='hidden' name='num' value='".$UnProduit->id_produit."'>
         <input type='image' src='../asset/images/Modifier.png'>
@@ -57,6 +57,7 @@ $lesProduitss->setFetchMode(PDO::FETCH_OBJ);
 <!-- Tableau des produits -->
 <table border=1 class="col-12 margeproduit titreadmin">
 <tr>           
+                    <th class="txt-center"> <b> Photo </th>
                     <th> <b> Numéro Photo </th>
                     <th> <b> Nom Photo </th>
                     <th class="txt-center"> Supprimer </th> 
@@ -65,8 +66,9 @@ $lesProduitss->setFetchMode(PDO::FETCH_OBJ);
     
     while( $UnProduit = $lesProduitss->fetch() ) 
     { 
-         echo "<td>".$UnProduit->id_illustration."</td>";
-         echo "<td align='left'> ".$UnProduit->img_illustration."</td>";
+        echo "<tr> <td align='center'> <img src='../asset/images/".$UnProduit->img_illustration."' width='50'> </td>";
+        echo "<td>".$UnProduit->id_illustration."</td>";
+        echo "<td align='left'> ".$UnProduit->img_illustration."</td>";
 
        // <a href='gestionproduitmodif?num=".$UnProduit->id_produit."'><img src='../asset/images/Modifier.png'></a></td>";
         echo "<td align='center'> <form action='gestionproduitsuppimage' method='POST'>

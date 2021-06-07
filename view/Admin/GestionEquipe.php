@@ -20,6 +20,7 @@ $lesEquipes->setFetchMode(PDO::FETCH_OBJ);
 <tr>           
                     <th> <b> Numéro </th>
                     <th> <b> Description </th>
+                    <th> <b> Numéro Photo </th>
                     <th class="txt-center"> Modifier </th> 
                     <th class="txt-center"> Supprimer </th> 
  </tr>
@@ -27,8 +28,9 @@ $lesEquipes->setFetchMode(PDO::FETCH_OBJ);
     
 	while( $UnEquipe = $lesEquipe->fetch() ) 
 	{ 
-         echo "<td>".$UnEquipe->num_equipe."</td>";
-         echo "<td>".$UnEquipe->desc_equipe."</td>";
+        echo "<td>".$UnEquipe->num_equipe."</td>";
+        echo "<td>".$UnEquipe->desc_equipe."</td>";
+        echo "<td>".$UnEquipe->id_photoequipe."</td>";
   		echo "<td align='center'> <form action='gestionequipemodif' method='POST'> 
         <input type='hidden' name='num' value='".$UnEquipe->num_equipe."'>
         <input type='image' src='../asset/images/Modifier.png'>
@@ -50,6 +52,7 @@ $lesEquipes->setFetchMode(PDO::FETCH_OBJ);
 <!-- Tableau des photos des équipes -->
 <table border=1 class="col-12 margeproduit">
 <tr>           
+                    <th class="txt-center"> <b> Photo </th>
                     <th> <b> Numéro Photo </th>
                     <th> <b> Nom Photo </th>
                     <th class="txt-center"> Supprimer </th> 
@@ -58,8 +61,9 @@ $lesEquipes->setFetchMode(PDO::FETCH_OBJ);
     
     while( $UnEquipe = $lesEquipes->fetch() ) 
     { 
-         echo "<td>".$UnEquipe->id_photoequipe."</td>";
-         echo "<td>".$UnEquipe->img_photoequipe."</td>";
+        echo "<tr> <td align='center'> <img src='../asset/images/".$UnEquipe->img_photoequipe."' width='50'> </td>";
+        echo "<td>".$UnEquipe->id_photoequipe."</td>";
+        echo "<td>".$UnEquipe->img_photoequipe."</td>";
 
        // <a href='gestionproduitmodif?num=".$UnProduit->id_produit."'><img src='../asset/images/Modifier.png'></a></td>";
         echo "<td align='center'> <form action='gestionequipesuppimage' method='POST'>

@@ -18,10 +18,10 @@ $lesSalles->setFetchMode(PDO::FETCH_OBJ);
 <!-- Tableau des photos de la salle -->
 <table border=1 class="col-12 margeproduit">
 <tr>           
-                    <th class="txt-center"> <b> Photo </th>
                     <th> <b> Numéro </th>
                     <th> <b> Titre </th>
                     <th> <b> Description </th>
+                    <th> <b> Numéro Photo </th>
                     <th class="txt-center"> Modifier </th> 
                     <th class="txt-center"> Supprimer </th> 
  </tr>
@@ -29,10 +29,10 @@ $lesSalles->setFetchMode(PDO::FETCH_OBJ);
     
 	while( $UnSalle = $lesSalle->fetch() ) 
 	{ 
-         echo "<tr> <td align='center'> <img src='../asset/images/photodeprofil/".$UnSalle->id_photosalle."' width='40'> </td>";
-         echo "<td>".$UnSalle->num_salle."</td>";
-         echo "<td>".$UnSalle->titre_salle."</td>";
-         echo "<td>".$UnSalle->desc_salle."</td>";
+        echo "<td>".$UnSalle->num_salle."</td>";
+        echo "<td>".$UnSalle->titre_salle."</td>";
+        echo "<td>".$UnSalle->desc_salle."</td>";
+        echo "<td>".$UnSalle->id_photosalle."</td>";
   		echo "<td align='center'> <form action='gestionsallemodif' method='POST'> 
         <input type='hidden' name='num' value='".$UnSalle->num_salle."'>
         <input type='image' src='../asset/images/Modifier.png'>
@@ -54,6 +54,7 @@ $lesSalles->setFetchMode(PDO::FETCH_OBJ);
 <!-- Tableau des photos de la salle -->
 <table border=1 class="col-12 margeproduit">
 <tr>           
+                    <th class="txt-center"> <b> Photo </th>
                     <th> <b> Numéro Photo </th>
                     <th> <b> Nom Photo </th>
                     <th class="txt-center"> Supprimer </th> 
@@ -62,8 +63,9 @@ $lesSalles->setFetchMode(PDO::FETCH_OBJ);
     
     while( $UnSalle = $lesSalles->fetch() ) 
     { 
-         echo "<td>".$UnSalle->id_photosalle."</td>";
-         echo "<td>".$UnSalle->img_photosalle."</td>";
+        echo "<tr> <td align='center'> <img src='../asset/images/".$UnSalle->img_photosalle."' width='50'> </td>";
+        echo "<td>".$UnSalle->id_photosalle."</td>";
+        echo "<td>".$UnSalle->img_photosalle."</td>";
 
        // <a href='gestionproduitmodif?num=".$UnProduit->id_produit."'><img src='../asset/images/Modifier.png'></a></td>";
         echo "<td align='center'> <form action='gestionsallesuppimage' method='POST'>

@@ -18,11 +18,11 @@ $lesBureaus->setFetchMode(PDO::FETCH_OBJ);
 <!-- Tableau des membres du bureau -->
 <table border=1 class="col-12 margeproduit">
 <tr>           
-                    <th> <b> Photo </th>
                     <th> <b> Numéro </th>
                     <th> <b> Nom </th>
                     <th> <b> Rôle </th>
                     <th> <b> Description </th>
+                    <th> <b> Numéro Photo </th>
                     <th class="txt-center"> Modifier </th> 
                     <th class="txt-center"> Supprimer </th> 
  </tr>
@@ -30,11 +30,11 @@ $lesBureaus->setFetchMode(PDO::FETCH_OBJ);
     
 	while( $UnBureau = $lesBureau->fetch() ) 
 	{ 
-         echo "<tr> <td align='center'> <img src='../asset/images/photodeprofil/".$UnBureau->id_photobureau."' width='40'> </td>";
-         echo "<td>".$UnBureau->num_bureau."</td>";
-         echo "<td>".$UnBureau->nom_bureau."</td>";
-         echo "<td>".$UnBureau->role_bureau."</td>";
-         echo "<td>".$UnBureau->desc_bureau."</td>";
+        echo "<td>".$UnBureau->num_bureau."</td>";
+        echo "<td>".$UnBureau->nom_bureau."</td>";
+        echo "<td>".$UnBureau->role_bureau."</td>";
+        echo "<td>".$UnBureau->desc_bureau."</td>";
+        echo "<td>".$UnBureau->id_photobureau."</td>";
   		echo "<td align='center'> <form action='gestionbureaumodif' method='POST'> 
         <input type='hidden' name='num' value='".$UnBureau->num_bureau."'>
         <input type='image' src='../asset/images/Modifier.png'>
@@ -56,6 +56,7 @@ $lesBureaus->setFetchMode(PDO::FETCH_OBJ);
 <!-- Tableau des photos de la salle -->
 <table border=1 class="col-12 margeproduit">
 <tr>           
+                    <th class="txt-center"> <b> Photo </th>
                     <th> <b> Numéro Photo </th>
                     <th> <b> Nom Photo </th>
                     <th class="txt-center"> Supprimer </th> 
@@ -64,8 +65,9 @@ $lesBureaus->setFetchMode(PDO::FETCH_OBJ);
     
     while( $UnBureau = $lesBureaus->fetch() ) 
     { 
-         echo "<td>".$UnBureau->id_photobureau."</td>";
-         echo "<td>".$UnBureau->img_photobureau."</td>";
+        echo "<tr> <td align='center'> <img src='../asset/images/".$UnBureau->img_photobureau."' width='50'> </td>";
+        echo "<td>".$UnBureau->id_photobureau."</td>";
+        echo "<td>".$UnBureau->img_photobureau."</td>";
 
        // <a href='gestionproduitmodif?num=".$UnProduit->id_produit."'><img src='../asset/images/Modifier.png'></a></td>";
         echo "<td align='center'> <form action='gestionbureausuppimage' method='POST'>
