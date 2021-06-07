@@ -17,7 +17,6 @@ if (!isset($_POST['Ref']))
 
 <form method='POST' action='gestionproduitsuppimage' class="col-12 lamarge">
     <table  width="95%" border="1" cellspacing="0" cellpadding="4">
-       <h1 class="lamarge"> Suppression d'une photo d'un produit </h1>
         <thead> <tr>  <th> <b> Numéro Photo </th> <td> <?php echo $UnProduit->id_illustration; ?> </td> </tr>
                 <tr>  <th> <b> Nom Photo </th>  <td> <?php echo $UnProduit->img_illustration;?> </td> </tr>                    	 
 
@@ -27,7 +26,7 @@ if (!isset($_POST['Ref']))
 	<div align='center'>
 	<br/>
 	   <input type='image' src='../asset/images/Poubelle.png'> 
-	   <a href='<?=WEBROOT.'admin/gestionproduit'?>'><img border=0 src='../asset/images/Annuler.png'></a>
+	   <a href='<?=WEBROOT.'admin/gestionproduit'?>'><img src='../asset/images/Annuler.png'></a>
 	</div> 
 </form>
 <?php
