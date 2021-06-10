@@ -137,27 +137,6 @@ h1, h2, h3, h4, h5, h6, h7, h8
 .border-top {
   border-top: 1px solid #edf0f5 !important; }
 
-.site-footer {
-  padding: 4em 0; }
-  @media (min-width: 768px) {
-    .site-footer {
-      padding: 8em 0; } }
-  .site-footer p {
-    color: #737373; }
-  .site-footer h2, .site-footer h3, .site-footer h4, .site-footer h5 {
-    color: #fff; }
-  .site-footer a {
-    color: #999999; }
-    .site-footer a:hover {
-      color: black; }
-  .site-footer ul li {
-    margin-bottom: 10px; }
-  .site-footer .footer-heading {
-    font-size: 16px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 900; }
-
 .bg-text-line {
   display: inline;
   background: #000;
@@ -1098,8 +1077,7 @@ h1, h2, h3, h4, h5, h6, h7, h8
   position: absolute;
   bottom: 0;
   padding: 2.5rem 0;
-  background: #096BDC;
-  color: #fff; }
+  background: #096BDC; }
   .footer .footer-heading {
     font-size: 16px;
     color: #fff;
