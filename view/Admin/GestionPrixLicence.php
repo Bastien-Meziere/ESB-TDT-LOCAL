@@ -7,34 +7,37 @@ $connexion = BDDConnexionPDO();
 	  
 $lesPrixLicence=$connexion->query("SELECT * FROM prixlicence ORDER BY num_prixlicence"); 
 $lesPrixLicence->setFetchMode(PDO::FETCH_OBJ); 
-
 ?>
 
-<h1 class="m-top150 txt-center"> Gestion des prix de la licence </h1>
+<h1 class="m-top150 txt-center"> Gestion des prix de la licence (Page Licences) </h1>
 
 <!-- Tableau des prix de la licence -->
-<table border=1 class="col-12 margeproduit">
-<tr>           
-                    <th> <b> Numéro </th>
-                    <th> <b> Catégorie </th>
-                    <th> <b> Prix </th>
-                    <th class="txt-center"> Modifier </th> 
- </tr>
-    <?php
-    
-	while( $UnPrixLicence = $lesPrixLicence->fetch() ) 
-	{ 
-         echo "<td>".$UnPrixLicence->num_prixlicence."</td>";
-         echo "<td>".$UnPrixLicence->cat_prixlicence."</td>";
-         echo "<td>".$UnPrixLicence->prix_prixlicence."</td>";
-  		echo "<td align='center'> <form action='gestionprixlicencemodif' method='POST'> 
-        <input type='hidden' name='num' value='".$UnPrixLicence->num_prixlicence."'>
-        <input type='image' src='../asset/images/Modifier.png'>
-        </form>";
+<div class="container-fluid">
+    <div class="row lamarge table-responsive">
+        <table class="col-12 margeproduit table table-striped table-hover">
+        <tr>           
+                            <th class="txt-center"> <b> Numéro </th>
+                            <th class="txt-center"> <b> Catégorie </th>
+                            <th class="txt-center"> <b> Prix </th>
+                            <th class="txt-center"> Modifier </th>
+        </tr>
+            <?php
+            
+            while( $UnPrixLicence = $lesPrixLicence->fetch() ) 
+            { 
+                echo "<td align='center'>".$UnPrixLicence->num_prixlicence."</td>";
+                echo "<td align='center'>".$UnPrixLicence->cat_prixlicence."</td>";
+                echo "<td align='center'>".$UnPrixLicence->prix_prixlicence." €</td>";
+                echo "<td align='center'> <form action='gestionprixlicencemodif' method='POST'> 
+                <input type='hidden' name='num' value='".$UnPrixLicence->num_prixlicence."'>
+                <input type='image' src='../asset/images/Modifier.png'>
+                </form>";
 
-	} 
-	?>
-</table>
+            } 
+            ?>
+        </table>
+    </div>
+</div>
 
 <!-- Bouton de retour -->
 <div class="container">
@@ -47,6 +50,3 @@ $lesPrixLicence->setFetchMode(PDO::FETCH_OBJ);
     </div>
 </div>
 <!-- Fin Bouton de retour-->
-
-
-

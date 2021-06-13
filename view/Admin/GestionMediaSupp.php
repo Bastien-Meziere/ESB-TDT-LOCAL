@@ -12,23 +12,28 @@ if (!isset($_POST['Ref']))
 
 	//var_dump($_POST['num']);
 	//var_dump($UnBureau);
-	?>
+?>
+
 <h1 class="lamarge txt-center"> Suppression d'un média </h1>
 
 <form method='POST' action='gestionmediasupp' class="col-12 lamarge">
-    <table  width="95%" border="1" cellspacing="0" cellpadding="4">
-        <thead> <tr>  <th> <b> Numéro </th> <td> <?php echo $UnMedia->num_media; ?> </td> </tr>
-                <tr>  <th> <b> Nom </th>  <td> <?php echo $UnMedia->nom_media;?> </td> </tr>
-				<tr>  <th> <b> Numéro Photo </th> <td> <?php echo $UnMedia->id_photomedia;?> </td> </tr>                     	 
+	<div class="container-fluid">
+		<div class="row lamarge table-responsive">
+			<table class="table table-striped table-hover" width="95%" cellspacing="0" cellpadding="4">
+				<thead> <tr>  <th> <b> Numéro </th> <td> <?php echo $UnMedia->num_media; ?> </td> </tr>
+						<tr>  <th> <b> Nom </th>  <td> <?php echo $UnMedia->nom_media;?> </td> </tr>
+						<tr>  <th> <b> Numéro Photo </th> <td> <?php echo $UnMedia->id_photomedia;?> </td> </tr>                     	 
 
-        </thead>
-    </table>
+				</thead>
+			</table>
 	<input type='hidden' name='Ref' value='<?php echo $UnMedia->num_media;?>'>
-	<div align='center'>
-	<br/>
-	   <input type='image' src='../asset/images/Poubelle.png'> 
-	   <a href='<?=WEBROOT.'admin/gestionmedia'?>'><img border=0 src='../asset/images/Annuler.png'></a>
-	</div> 
+		<div class="txt-center">
+		<br/>
+		<input type='image' src='../asset/images/Poubelle.png'> 
+		<a href='<?=WEBROOT.'admin/gestionmedia'?>'><img src='../asset/images/Annuler.png'></a>
+		</div>
+		</div>
+	</div>
 </form>
 <?php
 }
@@ -36,9 +41,7 @@ else
 {
 
 	// Mise à jour du contenu de la page dans la base de données 
-	
-     
-	
+
 		   $sql="DELETE FROM mediaa WHERE num_media=?"; 
 		   $resultats=$connexion->prepare($sql); 
 	  	   $resultats->execute(array($_POST['Ref'] ));
@@ -52,6 +55,4 @@ else
 		$resultats->closeCursor();		
 
 }
-?>
-
-		 
+?>	 

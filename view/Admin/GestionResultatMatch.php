@@ -7,43 +7,43 @@ $connexion = BDDConnexionPDO();
 	  
 $lesResultatMatch=$connexion->query("SELECT * FROM resultatmatch ORDER BY num_resultat"); 
 $lesResultatMatch->setFetchMode(PDO::FETCH_OBJ); 
-
 ?>
 
-<h1 class="txt-center m-top150"> Gestion des derniers résultats </h1>
+<h1 class="txt-center m-top150"> Gestion des derniers résultats (Page Accueil) </h1>
 
 <!-- Tableau des derniers résultats -->
-<table border=1 class="col-12 margeproduit">
-<tr>           
-                    <th> <b> Numéro </th>
-                    <th> <b> Désignation </th>
-                    <th> <b> Phrase 1 </th>
-                    <th> <b> Phrase 2 </th>
-                    <th> <b> Date </th>
-                    <th class="txt-center"> Modifier </th> 
- </tr>
-    <?php
-    
-	while( $UnResultatMatch = $lesResultatMatch->fetch() ) 
-	{ 
-         echo "<td>".$UnResultatMatch->num_resultat."</td>";
-         echo "<td>".$UnResultatMatch->lib_resultat."</td>";
-         echo "<td>".$UnResultatMatch->content_resultat."</td>";
-         echo "<td>".$UnResultatMatch->content2_resultat."</td>";
-         echo "<td>".$UnResultatMatch->date_resultat."</td>";
-  		echo "<td align='center'> <form action='gestionresultatmatchmodif' method='POST'> 
-        <input type='hidden' name='num' value='".$UnResultatMatch->num_resultat."'>
-        <input type='image' src='../asset/images/Modifier.png'>
-        </form>";
+<div class="container-fluid">
+    <div class="row lamarge table-responsive">
+        <table class="col-12 margeproduit table table-striped table-hover">
+        <tr>           
+                            <th class="txt-center"> <b> Numéro </th>
+                            <th class="txt-center"> <b> Désignation </th>
+                            <th class="txt-center"> <b> Équipe 1 </th>
+                            <th class="txt-center"> <b> Équipe 2 </th>
+                            <th class="txt-center"> <b> Date </th>
+                            <th class="txt-center"> Modifier </th> 
+        </tr>
+            <?php
+            
+            while( $UnResultatMatch = $lesResultatMatch->fetch() ) 
+            { 
+                echo "<td align='center'>".$UnResultatMatch->num_resultat."</td>";
+                echo "<td align='center'>".$UnResultatMatch->lib_resultat."</td>";
+                echo "<td align='center'>".$UnResultatMatch->content_resultat."</td>";
+                echo "<td align='center'>".$UnResultatMatch->content2_resultat."</td>";
+                echo "<td align='center'>".$UnResultatMatch->date_resultat."</td>";
+                echo "<td align='center'> <form action='gestionresultatmatchmodif' method='POST'> 
+                <input type='hidden' name='num' value='".$UnResultatMatch->num_resultat."'>
+                <input type='image' src='../asset/images/Modifier.png'>
+                </form>";
 
-       // <a href='gestionproduitmodif?num=".$UnProduit->id_produit."'><img src='../asset/images/Modifier.png'></a></td>";
-		
-        
-    
-        
-	} 
-	?>
-</table>
+            // <a href='gestionproduitmodif?num=".$UnProduit->id_produit."'><img src='../asset/images/Modifier.png'></a></td>";
+
+            } 
+            ?>
+        </table>
+    </div>
+</div>
 
 <!-- Bouton de retour -->
 <div class="container">
@@ -56,5 +56,3 @@ $lesResultatMatch->setFetchMode(PDO::FETCH_OBJ);
     </div>
 </div>
 <!-- Fin Bouton de retour-->
-
-

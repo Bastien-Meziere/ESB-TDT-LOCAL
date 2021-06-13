@@ -4,27 +4,30 @@ $connexion = BDDConnexionPDO();
 
 if (!isset($_POST['Ref']))
 {
-	
-
-
 
 // Affichage de la news dans un formulaire 
 ?>
+
 <h1 class="txt-center lamarge"> Ajout d'une photo d'un produit </h1>
+
 <form class="col-12 lamarge" method='POST' action='gestionproduitajoutimage'>
-        <table  width="95%" border="1" cellspacing="0" cellpadding="4">
-          
-            <thead> <tr>  <th> <b> Numéro Photo </th>  <td> <input type='text' size='40' name='Ref' required> </td> </tr>       
-					<tr>  <th> <b> Nom Photo </th>  <td> <input type='text' size='40' name='RefPhoto' required> </td> </tr>
-								
-                                </tr>					
-            </thead>
-        </table>
-		<div align='center'>
+	<div class="container-fluid">
+		<div class="row lamarge table-responsive">
+			<table class="table table-striped table-hover" width="95%" cellspacing="0" cellpadding="4">
+			
+				<thead> <tr>  <th> <b> Numéro Photo </th>  <td> <input type='text' size='40' name='Ref' required> </td> </tr>       
+						<tr>  <th> <b> Nom Photo </th>  <td> <input type='text' size='40' name='RefPhoto' required> </td> </tr>
+									
+									</tr>					
+				</thead>
+			</table>
+		<div class="txt-center">
 		<br/>
 		   <input type='image' src='../asset/images/Enregistrer.png'> 
-		   <a href='<?=WEBROOT.'admin/gestionproduit'?>'><img border=0 src='../asset/images/Annuler.png'></a>
-		</div> 
+		   <a href='<?=WEBROOT.'admin/gestionproduit'?>'><img src='../asset/images/Annuler.png'></a>
+		</div>
+		</div>
+	</div>
 </form>
 <?php
 }
@@ -32,9 +35,7 @@ else
 {
 
 // Mise à jour du contenu de la page dans la base de données 
-	
-	   
-	
+
 		   $sql="INSERT INTO illustration VALUES (? , ?)"; 
 		   $resultats=$connexion->prepare($sql); 
 	  	   $resultats->execute(array( $_POST['Ref'] ,  $_POST['RefPhoto'] ));
