@@ -96,7 +96,7 @@
   <div class="container-fluid">
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-      <div class="site-section services-1-wrap center-block">
+      <div class="site-section services-1-wrap txt-center">
         <div class="mb-5 justify-content center">
             <video class="video1 img-fluid" src="<?= IMAGE ?>images/entrainement.mp4" controls width="500" poster="<?= IMAGE ?>images/table.png"></video>
               <p class="p1">Entraînement Mardi soir</p>
@@ -105,7 +105,7 @@
       </div>
     </div>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-      <div class="site-section services-1-wrap center-block">
+      <div class="site-section services-1-wrap txt-center">
         <div class="mb-5 justify-content center">
           <a href="http://www.es-bonchamp.fr/Plan/Plan-01.htm"><img class="plan img-fluid" src="<?= IMAGE ?>images/plantdt.png" alt="es-bonchamp.fr" width="530"><h2 class="p1">Plan de situation de la salle de TDT</h2></a>
         </div>

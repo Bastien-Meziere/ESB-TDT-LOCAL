@@ -43,7 +43,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-      <div class="site-section services-1-wrap center-block">
+      <div class="site-section services-1-wrap txt-center">
         <div class="mb-5 justify-content center">
           <h3 class="section-subtitle7 titrechampionnat">Phase 1</h3>
             <a href="http://www.fftt.com/monclub/spid_equipe/chp_div.php?organisme_pere=53&cx_poule=6503&D1=3716&virtuel=0" target="_blank" class="txt-poule">Équipe 1 (Poule B)</a><br />
@@ -52,7 +52,7 @@
       </div>
     </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <div class="site-section services-1-wrap center-block">
+        <div class="site-section services-1-wrap txt-center">
           <div class="mb-5 justify-content center">
             <h3 class="section-subtitle7 titrechampionnat">Phase 2</h3>
               <a href="#" target="_blank" class="txt-poule">Équipe 1 (Poule ?)</a><br />
