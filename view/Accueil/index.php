@@ -98,7 +98,7 @@
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
       <div class="site-section services-1-wrap txt-center">
         <div class="mb-5 justify-content center">
-            <video class="video1 img-fluid" src="<?= IMAGE ?>images/entrainement.mp4" controls width="500" poster="<?= IMAGE ?>images/table.jpg"></video>
+            <video class="video1 img-fluid" src="<?= IMAGE ?>images/entrainement.mp4" controls width="500"></video>
               <p class="p1">Entraînement Mardi soir</p>
               <p class="p2">Voir <a href="<?=WEBROOT.'entrainements'?>" class="badge badge-danger"> Entraînements</a></p>
         </div>
