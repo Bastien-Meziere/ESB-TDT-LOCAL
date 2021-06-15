@@ -24,5 +24,5 @@
             
            ";
 	mail($mailDestinataire, $sujet, $messageMail, $from);
-	header('Location: https://www.esbonchamp-tdt.fr/contact');
+	header('Location: http://localhost/ESB-TDT-LOCAL/contact');
 ?>
