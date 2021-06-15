@@ -12,7 +12,7 @@ if (!isset($_POST['Libelle']))
 <h1 class="lamarge3 txt-center"> Ajout d'un document dans le répertoire du site </h1>
 <h2 class="txt-center"> Format accepté : .html/.pdf/.doc/.xls/.ppt/.odt/.xslx </h2>
 
-<form class="container lamarge3 col-12 text-center" action="formulaireDoc.php" method="POST" enctype="multipart/form-data">
+<form class="container lamarge3 col-12 text-center" action="formulairedoc" method="POST" enctype="multipart/form-data">
 <label for="Titre">Titre du document</label>
 <input type='text' name="Libelle">
 <br/>
@@ -49,6 +49,9 @@ else
     
     // Appel de la fonction de transfert du fichier fonctions.php qui renvoie le message à afficher
     echo TransfertDocument("mondocument", $nouveauNom, "asset/images/");
+
+    //Redirection vers la page formulaireImage
+    header('Location: http://localhost/ESB-TDT-LOCAL/admin/formulaireimage');
 
     // Il faut rajouter ici la sauvegarde du chemin et du nom du fichier dans la base de données
     // C'est à dire il faut un champ dans une table avec le LIBELLE du document et le chemin avec le nom du fichier
