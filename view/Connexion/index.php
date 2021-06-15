@@ -1,7 +1,7 @@
-<?php $title = "ES Bonchamp Tdt - Connexion"; ?>
 <?php
   session_start();
 ?>
+<?php $title = "ES Bonchamp Tdt - Connexion"; ?>
  <!-- Formulaire de connexion -->
 <section class="page-section lamarge" id="connect">
   <div class="container">

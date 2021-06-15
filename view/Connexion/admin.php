@@ -13,10 +13,10 @@
         <div class="row">
             <div class="col-12 text-center">
                 <div class="row">
-                    <a href="<?=WEBROOT.'formulaireDoc'?>">-> Ajouter un document</a>
+                    <a href="<?=WEBROOT.'admin/formulairedoc'?>">-> Ajouter un document</a>
                 </div>
                 <div class="row">
-                    <a href="<?=WEBROOT.'formulaireImage'?>">-> Ajouter une image</a>
+                    <a href="<?=WEBROOT.'admin/formulaireimage'?>">-> Ajouter une image</a>
                 </div>
                 <div class="row">
                     <a href="<?=WEBROOT.'admin/gestionproduit'?>">-> Gérer les produits (Boutique)</a>

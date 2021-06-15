@@ -1,8 +1,4 @@
-
-
 <?php
-
-
 
 function TransfertImage($nomInput, $nouveauNomFichier, $chemin)
 {
@@ -36,7 +32,7 @@ $nomImage = '';
 //var_dump($_FILES);
 if( !is_dir(REPERTOIRE) ) {
   if( !mkdir(REPERTOIRE, 0755) ) {
-    exit('Erreur : le répertoire cible ne peut-être créé ! Vérifiez que vous diposiez des droits suffisants pour le faire ou créez le manuellement !');
+    exit('Erreur : le répertoire cible ne peut-être créé ! Vérifiez que vous disposez des droits suffisants pour le faire ou créez le manuellement !');
   }
 }
 
@@ -93,7 +89,7 @@ if( !is_dir(REPERTOIRE) ) {
           }
           else
           {
-            $message = 'Une erreur interne a empêché l\'uplaod de l\'image';
+            $message = 'Une erreur interne a empêché l\'upload de l\'image';
           }
         }
         else
@@ -117,7 +113,7 @@ if( !is_dir(REPERTOIRE) ) {
   else
   {
     // Sinon on affiche une erreur pour le champ vide
-    $message = 'Veuillez ajouter une image ou un document svp !';
+    $message = 'Veuillez ajouter une image ou un document !';
   }
 
 return $message;
@@ -159,7 +155,7 @@ $nomDoc = '';
 //var_dump($_FILES);
 if( !is_dir(REPERTOIRE) ) {
   if( !mkdir(REPERTOIRE, 0755) ) {
-    exit('Erreur : le répertoire cible ne peut-être créé ! Vérifiez que vous diposiez des droits suffisants pour le faire ou créez le manuellement !');
+    exit('Erreur : le répertoire cible ne peut-être créé ! Vérifiez que vous disposez des droits suffisants pour le faire ou créez le manuellement !');
   }
 }
 

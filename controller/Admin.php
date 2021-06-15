@@ -110,10 +110,6 @@ function formulaireimage(){
 	$this->render('formulaireImage');
 }
 
-function TransfertImage(){
-	$this->render('fonction');
-}
-
 function gestionsalle(){
 	$this->render('GestionSalle');
 }
