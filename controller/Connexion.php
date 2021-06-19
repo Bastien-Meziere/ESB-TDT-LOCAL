@@ -28,6 +28,7 @@ class Connexion extends Controller
             $_SESSION['admin']=$tableRes['variable']['admin'];
             $this->render('admin');
         }else{
+            $_SESSION['danger'] = 1;
             header('Location: http://localhost/ESB-TDT-LOCAL/connexion');
         }
         

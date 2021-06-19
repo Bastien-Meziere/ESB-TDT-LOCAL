@@ -5,18 +5,18 @@
  <!-- Formulaire de connexion -->
 <section class="page-section lamarge" id="connect">
   <div class="container">
-  <?php if(array_key_exists('danger', $_SESSION)): ?>
-    <div class="alert faux">
-      Nom d'utilisateur ou mot de passe incorrect !
-    </div>
-  <?php endif; ?>
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="titreconnexion section-heading text-uppercase">Se connecter en tant qu'Administrateur</h2>
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-12 ">
+      <div class="col-lg-12">
+        <?php if(array_key_exists('danger', $_SESSION)): ?>
+          <div class="alert faux margeproduit-plus">
+            Nom d'utilisateur ou mot de passe incorrect !
+          </div>
+        <?php endif; ?>
         <form id="contactForm" name="sentMessage" method="POST" action="<?= WEBROOT.'connexion/connect' ?>" >
           <div class="row">
             <div class="col-md-12 col-xs-12">
