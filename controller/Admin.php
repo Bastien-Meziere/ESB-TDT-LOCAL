@@ -110,6 +110,30 @@ function formulaireimage(){
 	$this->render('formulaireImage');
 }
 
+function afficherImage(){
+	require_once('view/Admin/fonction.php');
+	$_SESSION['success'] = 1;
+	// Nom du fichier avec la date de l'upload pour éviter doublons dans le répertoire
+	$nouveauNom = $_POST['Libelle'];
+	// Appel de la fonction de transfert du fichier fonctions.php qui renvoie le message à afficher
+	// On précise le nom du champ du formulaire, le nouveau nom du fichier, et le chemin où placer le fichier
+	echo TransfertImage("monimage", $nouveauNom, "asset/images/");
+    //Redirection vers la page formulaireImage
+    header('Location: http://localhost/ESB-TDT-LOCAL/admin/formulaireimage');
+}
+
+function afficherDoc(){
+	require_once('view/Admin/fonction.php');
+	$_SESSION['success'] = 1;
+	// Nom du fichier avec la date de l'upload pour éviter doublons dans le répertoire
+	$nouveauNom = $_POST['Libelle'];
+	// Appel de la fonction de transfert du fichier fonctions.php qui renvoie le message à afficher
+	// On précise le nom du champ du formulaire, le nouveau nom du fichier, et le chemin où placer le fichier
+	echo TransfertDocument("mondocument", $nouveauNom, "asset/images/");
+    //Redirection vers la page formulaireImage
+    header('Location: http://localhost/ESB-TDT-LOCAL/admin/formulairedoc');
+}
+
 function gestionsalle(){
 	$this->render('GestionSalle');
 }
