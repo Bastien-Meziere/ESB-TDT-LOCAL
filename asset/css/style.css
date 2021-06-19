@@ -1295,9 +1295,18 @@ h1, h2, h3, h4, h5, h6, h7, h8
   margin-bottom: 80px;
 }
 
+.margeproduit-plus {
+  margin-top: 35px;
+  margin-bottom: 80px;
+}
+
 .lamarge3 {
    margin-top: 200px;
    margin-bottom: 50px;
+}
+
+.margetop100 {
+  margin-top: 100px;
 }
 /* Css de ce qui entoure chaque produit dans Boutique */
 .selection article {
@@ -1310,7 +1319,7 @@ h1, h2, h3, h4, h5, h6, h7, h8
 .selection article p img{
   max-height:150px;
   border-radius:5px;
-    box-shadow: 5px 5px 0px #cac0c0;
+  box-shadow: 5px 5px 0px #cac0c0;
 }
 
 .lamargetrois {
