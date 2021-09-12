@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.0
+-- version OVH
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : jeu. 27 mai 2021 à 14:27
--- Version du serveur :  10.4.19-MariaDB
--- Version de PHP : 7.3.28
+-- Hôte : esboncbbonchamp.mysql.db
+-- Généré le : dim. 12 sep. 2021 à 21:03
+-- Version du serveur : 5.6.50-log
+-- Version de PHP : 7.4.21
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,8 +18,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `esbtdt`
+-- Base de données : `esboncbbonchamp`
 --
+CREATE DATABASE IF NOT EXISTS `esboncbbonchamp` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `esboncbbonchamp`;
 
 -- --------------------------------------------------------
 
@@ -119,7 +121,7 @@ CREATE TABLE `evenement` (
 --
 
 INSERT INTO `evenement` (`num_evenement`, `desc_evenement`, `id_photoevenement`) VALUES
-(1, 'Tournoi de Bonchamp le 09/04/2021 !', 1),
+(1, 'Tournoi de Bonchamp le 29/04/2022 !', 1),
 (2, '...', 2);
 
 -- --------------------------------------------------------
@@ -185,6 +187,28 @@ INSERT INTO `lebureau` (`num_bureau`, `nom_bureau`, `role_bureau`, `desc_bureau`
 (1, 'Nicolas Begoin', 'Président', 'Le président a un rôle de direction générale et de gestion de l’association ainsi qu’un rôle de représentation de l’association. Par exemple, il peut être en charge des relations publiques et ainsi communiquer avec la presse au nom de l’association.', 2),
 (2, 'Sandrine Maignan', 'Trésorière', 'Le trésorier détermine les dépenses à engager pour la réalisation du programme d’activités, établi le budget prévisionnel d’association approprié aux objectifs (court, moyen et long terme), avance des propositions sur la gestion de l’association.', 1),
 (3, 'Thomas Douillet', 'Secrétaire', 'Le secrétaire traite tous les courriers, transmet à l’organe compétent les courriers qui nécessitent une concentration particulière, liste tous les adhérents (nom, prénoms, coordonnées…), rédige des notes d’information à destination des adhérents.', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `licence`
+--
+
+CREATE TABLE `licence` (
+  `num_licence` int(3) NOT NULL,
+  `cat_licence` varchar(255) NOT NULL,
+  `prix_licence` double(5,2) NOT NULL,
+  `id_photolicence` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `licence`
+--
+
+INSERT INTO `licence` (`num_licence`, `cat_licence`, `prix_licence`, `id_photolicence`) VALUES
+(1, 'Poussins / Benjamins', 100.00, 1),
+(2, 'Minimes / Cadets', 100.00, 1),
+(3, 'Juniors / Seniors / Vétérans', 100.00, 1);
 
 -- --------------------------------------------------------
 
@@ -286,6 +310,24 @@ INSERT INTO `photoevenement` (`id_photoevenement`, `img_photoevenement`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `photolicence`
+--
+
+CREATE TABLE `photolicence` (
+  `id_photolicence` int(5) NOT NULL,
+  `img_photolicence` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `photolicence`
+--
+
+INSERT INTO `photolicence` (`id_photolicence`, `img_photolicence`) VALUES
+(1, 'photovierge.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `photomedia`
 --
 
@@ -326,44 +368,23 @@ INSERT INTO `photosalle` (`id_photosalle`, `img_photosalle`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `prixlicence`
+-- Structure de la table `photoslide`
 --
 
-CREATE TABLE `prixlicence` (
-  `num_prixlicence` int(3) NOT NULL,
-  `cat_prixlicence` varchar(150) NOT NULL,
-  `prix_prixlicence` double(6,2) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `photoslide` (
+  `id_photoslide` int(5) NOT NULL,
+  `img_photoslide` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `prixlicence`
+-- Déchargement des données de la table `photoslide`
 --
 
-INSERT INTO `prixlicence` (`num_prixlicence`, `cat_prixlicence`, `prix_prixlicence`) VALUES
-(1, 'Poussins/Benjamins : ', 90.00),
-(2, 'Minimes/Cadets :', 90.00),
-(3, 'Juniors/Seniors/Vétérans :', 100.00);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `prochainmatch`
---
-
-CREATE TABLE `prochainmatch` (
-  `num_match` int(3) NOT NULL,
-  `lib_match` varchar(100) NOT NULL,
-  `content_match` longtext NOT NULL,
-  `content2_match` longtext NOT NULL,
-  `date_match` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
---
--- Déchargement des données de la table `prochainmatch`
---
-
-INSERT INTO `prochainmatch` (`num_match`, `lib_match`, `content_match`, `content2_match`, `date_match`) VALUES
-(1, 'D2 et D5', 'En D2 Bonchamp 1 joue à domicile contre Louverné 4 (RDV 20h15 dans la salle)', 'En D5 Bonchamp 2 joue à domicile contre Évron 6 (RDV 20h15 dans la salle)', 'Vendredi 13 mars 2020');
+INSERT INTO `photoslide` (`id_photoslide`, `img_photoslide`) VALUES
+(1, 'table.jpg'),
+(2, 'vainqueur.jpg'),
+(3, 'derniersresultats.png'),
+(4, 'prochainsmatchs.png');
 
 -- --------------------------------------------------------
 
@@ -391,23 +412,27 @@ INSERT INTO `produit` (`id_produit`, `lib_produit`, `desc_produit`, `prix_produi
 -- --------------------------------------------------------
 
 --
--- Structure de la table `resultatmatch`
+-- Structure de la table `slide`
 --
 
-CREATE TABLE `resultatmatch` (
-  `num_resultat` int(3) NOT NULL,
-  `lib_resultat` varchar(255) NOT NULL,
-  `content_resultat` longtext NOT NULL,
-  `content2_resultat` longtext NOT NULL,
-  `date_resultat` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE `slide` (
+  `num_slide` int(5) NOT NULL,
+  `contenu1_slide` varchar(250) NOT NULL,
+  `contenu2_slide` varchar(250) NOT NULL,
+  `contenu3_slide` varchar(250) NOT NULL,
+  `contenu4_slide` varchar(250) NOT NULL,
+  `id_photoslide` int(5) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Déchargement des données de la table `resultatmatch`
+-- Déchargement des données de la table `slide`
 --
 
-INSERT INTO `resultatmatch` (`num_resultat`, `lib_resultat`, `content_resultat`, `content2_resultat`, `date_resultat`) VALUES
-(1, 'D2 et D5', 'Victoire 18 - 2 de Bonchamp 1 (D2) contre Soulgé/Argentré 2', 'Victoire 15 - 3 de Bonchamp 2 (D5) contre Sacé/Martigné 6', 'Vendredi 07 février 2020');
+INSERT INTO `slide` (`num_slide`, `contenu1_slide`, `contenu2_slide`, `contenu3_slide`, `contenu4_slide`, `id_photoslide`) VALUES
+(1, 'Bienvenue sur le site de l\'ES Bonchamp Tennis de table !', '', '', '', 1),
+(2, 'Tournoi de Bonchamp le 29 Avril 2022 !', '', '', '', 2),
+(3, '', 'Vendredi 07 février 2020', 'Victoire 18 - 2 de Bonchamp 1 (D2) contre Soulgé/Argentré 2', 'Victoire 15 - 3 de Bonchamp 2 (D5) contre Sacé/Martigné 6', 3),
+(4, '', 'Vendredi 13 mars 2020', 'En D2 Bonchamp 1 joue à domicile contre Louverné 4 (RDV 20h15 dans la salle)', 'En D5 Bonchamp 2 joue à domicile contre Évron 6 (RDV 20h15 dans la salle)', 4);
 
 --
 -- Index pour les tables déchargées
@@ -468,6 +493,13 @@ ALTER TABLE `lebureau`
   ADD KEY `photobureau` (`id_photobureau`);
 
 --
+-- Index pour la table `licence`
+--
+ALTER TABLE `licence`
+  ADD PRIMARY KEY (`num_licence`),
+  ADD KEY `photolicence` (`id_photolicence`);
+
+--
 -- Index pour la table `mediaa`
 --
 ALTER TABLE `mediaa`
@@ -499,6 +531,12 @@ ALTER TABLE `photoevenement`
   ADD PRIMARY KEY (`id_photoevenement`);
 
 --
+-- Index pour la table `photolicence`
+--
+ALTER TABLE `photolicence`
+  ADD PRIMARY KEY (`id_photolicence`);
+
+--
 -- Index pour la table `photomedia`
 --
 ALTER TABLE `photomedia`
@@ -511,16 +549,10 @@ ALTER TABLE `photosalle`
   ADD PRIMARY KEY (`id_photosalle`);
 
 --
--- Index pour la table `prixlicence`
+-- Index pour la table `photoslide`
 --
-ALTER TABLE `prixlicence`
-  ADD PRIMARY KEY (`num_prixlicence`);
-
---
--- Index pour la table `prochainmatch`
---
-ALTER TABLE `prochainmatch`
-  ADD PRIMARY KEY (`num_match`);
+ALTER TABLE `photoslide`
+  ADD PRIMARY KEY (`id_photoslide`);
 
 --
 -- Index pour la table `produit`
@@ -530,10 +562,11 @@ ALTER TABLE `produit`
   ADD KEY `illustration` (`id_illustration`);
 
 --
--- Index pour la table `resultatmatch`
+-- Index pour la table `slide`
 --
-ALTER TABLE `resultatmatch`
-  ADD PRIMARY KEY (`num_resultat`);
+ALTER TABLE `slide`
+  ADD PRIMARY KEY (`num_slide`),
+  ADD KEY `photoslide` (`id_photoslide`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -552,16 +585,28 @@ ALTER TABLE `illustration`
   MODIFY `id_illustration` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT pour la table `prochainmatch`
+-- AUTO_INCREMENT pour la table `licence`
 --
-ALTER TABLE `prochainmatch`
-  MODIFY `num_match` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `licence`
+  MODIFY `num_licence` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `resultatmatch`
+-- AUTO_INCREMENT pour la table `photolicence`
 --
-ALTER TABLE `resultatmatch`
-  MODIFY `num_resultat` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+ALTER TABLE `photolicence`
+  MODIFY `id_photolicence` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `photoslide`
+--
+ALTER TABLE `photoslide`
+  MODIFY `id_photoslide` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT pour la table `slide`
+--
+ALTER TABLE `slide`
+  MODIFY `num_slide` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
