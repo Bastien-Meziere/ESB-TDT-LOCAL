@@ -1,8 +1,8 @@
 <?php 
 define('WEBROOT',str_replace('index.php','',$_SERVER['SCRIPT_NAME']));
 define('ROOT',str_replace('index.php','',$_SERVER['SCRIPT_FILENAME']));
-define('IMAGE','/ESB-TDT-LOCAL/asset/');
-define('SCRIPT','/ESB-TDT-LOCAL/asset/js/');
+define('IMAGE','http://esb-tdt-local.test//asset/');
+define('SCRIPT','http://esb-tdt-local.test//asset/js/');
 
 
 
