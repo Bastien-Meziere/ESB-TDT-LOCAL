@@ -38,7 +38,7 @@
             <td class="price heure">De 17h00 à 18h30</td>
             <td class="price"></td>
             <td class="price"></td>
-            <td class="price heure">De 20h00 à 21h30</td>
+            <td class="price heure">De 19h30 à 21h00</td>
             <td class="price"></td>
           </tr><!-- Fin de la ligne-->
           <tr>
@@ -52,8 +52,8 @@
           <tr>
           <th class="semaine" scope="row">Jeudi</th>
             <td class="price"></td>
-            <td class="price"></td>
             <td class="price heure">De 18h30 à 20h00</td>
+            <td class="price"></td>
             <td class="price"></td>
             <td class="price"></td>
           </tr><!-- Fin de la ligne-->
@@ -91,16 +91,14 @@
 <!-- Entraîneurs du club -->
 <div class="container-fluid">
   <div class="row lamarge2">
-    <?php
-          foreach($variablequatre['entrainement'] as $ligne) {
-    ?>
+    <?php foreach($variablequatre['entrainement'] as $ligne): ?>
     <div class="col-md-4 col-lg-4 col-sm-4 col-xs-12 text-center" data-aos="fade-up">
-      <img class="img-fluid w-40 rounded-circle mb-4" src="<?= IMAGE ?>images/<?= $ligne->img_photobureau?>" alt="Entraineur du club">
+      <img class="img-fluid w-40 rounded-circle mb-4" src="<?= IMAGE ?>images/<?= $ligne->img_photobureau?>" alt="Entraineur du club ES Bonchamp Tdt">
       <h2 class="text-black font-weight-light mb-4"><?= $ligne->nom_entrainement ?></h2>
-      <h2 class="text-black font-weight-light mb-4"><?= $ligne->role_entrainement ?></h2>
+      <h3 class="text-black font-weight-light mb-4"><?= $ligne->role_entrainement ?></h3>
       <p class="mb-4"><?= $ligne->desc_entrainement ?></p>
     </div>
-    <?php } ?>
+    <?php endforeach ?>
   </div>
 </div>
 <!-- Fin Entraîneurs du club -->
