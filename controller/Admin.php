@@ -120,7 +120,7 @@ function afficherImage(){
 	// On précise le nom du champ du formulaire, le nouveau nom du fichier, et le chemin où placer le fichier
 	echo TransfertImage("monimage", $nouveauNom, "asset/images/");
     //Redirection vers la page formulaireImage
-    header('Location: https://www.esbonchamp-tdt.fr/admin/formulaireimage');
+    header('Location: http://esb-tdt-local.test/admin/formulaireimage');
 }
 
 function afficherDoc(){
@@ -132,7 +132,7 @@ function afficherDoc(){
 	// On précise le nom du champ du formulaire, le nouveau nom du fichier, et le chemin où placer le fichier
 	echo TransfertDocument("mondocument", $nouveauNom, "asset/images/");
     //Redirection vers la page formulaireImage
-    header('Location: https://www.esbonchamp-tdt.fr/admin/formulairedoc');
+    header('Location: http://esb-tdt-local.test/admin/formulairedoc');
 }
 
 function gestionsalle(){
