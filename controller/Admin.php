@@ -3,9 +3,10 @@ class Admin extends Controller
 {
 
 function index(){
-	$variable["test"]=array('titre'=>'Accueil', 'description'=>'trop de blabla');
 
-        $this->render('erreuradmin');
+	$variable["test"]=array('titre'=>'Accueil', 'description'=>'trop de blabla');
+	$this-> set($variable);
+	$this->render('index');
 }
 
 function gestionproduit() {
@@ -119,7 +120,7 @@ function afficherImage(){
 	// On précise le nom du champ du formulaire, le nouveau nom du fichier, et le chemin où placer le fichier
 	echo TransfertImage("monimage", $nouveauNom, "asset/images/");
     //Redirection vers la page formulaireImage
-    header('Location: http://localhost/ESB-TDT-LOCAL/admin/formulaireimage');
+    header('Location: https://www.esbonchamp-tdt.fr/admin/formulaireimage');
 }
 
 function afficherDoc(){
@@ -131,7 +132,7 @@ function afficherDoc(){
 	// On précise le nom du champ du formulaire, le nouveau nom du fichier, et le chemin où placer le fichier
 	echo TransfertDocument("mondocument", $nouveauNom, "asset/images/");
     //Redirection vers la page formulaireImage
-    header('Location: http://localhost/ESB-TDT-LOCAL/admin/formulairedoc');
+    header('Location: https://www.esbonchamp-tdt.fr/admin/formulairedoc');
 }
 
 function gestionsalle(){
@@ -192,24 +193,6 @@ function gestionequipeajoutimage(){
 function gestionequipesuppimage(){
 	$this->render('GestionEquipeSuppImage');
 }
-function gestionslider(){
-	$this->render('GestionSlider');
-}
-function gestionsliderajout(){
-	$this->render('GestionSliderAjout');
-}
-function gestionslidermodif(){
-	$this->render('GestionSliderModif');
-}
-function gestionslidersupp(){
-	$this->render('GestionSliderSupp');
-}
-function gestionsliderajoutimage(){
-	$this->render('GestionSliderAjoutImage');
-}
-function gestionslidersuppimage(){
-	$this->render('GestionSliderSuppImage');
-}
 function gestioncompet(){
 	$this->render('GestionCompet');
 }
@@ -264,6 +247,22 @@ function gestionmediaajoutimage(){
 function gestionmediasuppimage(){
 	$this->render('GestionMediaSuppImage');
 }
+function gestionslide(){
+	$this->render('GestionSlide');
 }
-
-?>
+function gestionslidemodif(){
+	$this->render('GestionSlideModif');
+}
+function gestionslidesupp(){
+	$this->render('GestionSlideSupp');
+}
+function gestionslideajout(){
+	$this->render('GestionSlideAjout');
+}
+function gestionslideajoutimage(){
+	$this->render('GestionSlideAjoutImage');
+}
+function gestionslidesuppimage(){
+	$this->render('GestionSlideSuppImage');
+}
+}

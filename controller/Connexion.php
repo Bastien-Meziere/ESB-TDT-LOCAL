@@ -1,8 +1,10 @@
-<?php 
+<?php
+    session_start();
+
 class Connexion extends Controller
 {
     function index(){
-        
+
         $variable["test"]=array('titre'=>'Accueil', 'description'=>'trop de blabla');
         $this-> set($variable);
         $this->render('index');
@@ -29,7 +31,7 @@ class Connexion extends Controller
             $this->render('admin');
         }else{
             $_SESSION['danger'] = 1;
-            header('Location: http://localhost/ESB-TDT-LOCAL/connexion');
+            header('Location: https://www.esbonchamp-tdt.fr/connexion');
         }
         
         //$this-> set($tableRes);
@@ -39,14 +41,12 @@ class Connexion extends Controller
     function logout($personne=null){
 
         session_destroy();
-        header('Location: http://localhost/ESB-TDT-LOCAL/connexion');
+        header('Location: https://www.esbonchamp-tdt.fr/connexion');
         exit;
     }
 
     function retour($personne=null){
 
-        header('Location: http://localhost/ESB-TDT-LOCAL/connexion/connect');
-        exit;
+        $this->render('admin');
     }
-    }
-    ?>
+}

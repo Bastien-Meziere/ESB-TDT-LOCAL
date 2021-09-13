@@ -1,15 +1,15 @@
-<?php
-class Erreur extends Controller
-{
+<?php class Erreur extends Controller{
 
-	function index(){
+function index(){
 
-        $this-> set($tableRes);
-        $this->render('index');
-	}
-    function perdu(){
-        $this->render('404');
+    $this-> set($tableRes);
+    $this->render('index');
+
+    }
+
+function perdu(){
+
+    $this->render('404');
+
     }
 }
-?>
-
