@@ -6,25 +6,36 @@
   <meta name="description" content="Le site officiel de l'ES Bonchamp tdt. Vous pouvez y retrouver toutes les informations du club : Résultat, Prochain Match, Entraînement, Boutique..">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700Muli:300,400" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400,700Muli:300,400">
   <link rel="stylesheet" href="<?= IMAGE ?>fonts/icomoon/style.css">
 
   <link rel="icon" type="image/ico" href="<?= IMAGE ?>images/favicon-32x32.png">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?= IMAGE ?>css/jquery-ui.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
   <link rel="stylesheet" href="<?= IMAGE ?>css/owl.carousel.min.css">
   <link rel="stylesheet" href="<?= IMAGE ?>css/owl.theme.default.min.css">
 
-  <link rel="stylesheet" href="<?= IMAGE ?>css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
   <link rel="stylesheet" href="<?= IMAGE ?>fonts/flaticon/font/flaticon.css">
+  <link rel="preload" href="../asset/fonts/flaticon/font/Flaticon.woff2" as="font" type="font/woff2">
 
-  <link rel="stylesheet" href="<?= IMAGE ?>css/aos.css">
-  <link href="<?= IMAGE ?>css/jquery.mb.YTPlayer.min.css" media="all" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.9/css/jquery.mb.YTPlayer.min.css" media="all" type="text/css">
 
   <link rel="stylesheet" href="<?= IMAGE ?>css/style.css">
-  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"/>
+  <link rel="preload" as="image" href="../asset/images/table.jpg">
+  <link rel="preload" as="image" href="../asset/images/table.jpg" type="image/svg+xml">
+  <script src="https://www.google.com/recaptcha/api.js?render=6LfN_lYcAAAAABzg1rl1JAlyVfGSbOHqYrMHYAjK"></script>
+  <script>
+  grecaptcha.ready(function() {
+  grecaptcha.execute('6LfN_lYcAAAAABzg1rl1JAlyVfGSbOHqYrMHYAjK', {action: 'homepage'}).then(function(token) {
+      document.getElementById('recaptchaResponse').value = token
+  });
+  });
+  </script>
 </head>
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
@@ -43,7 +54,7 @@
         <div class="row align-items-center">
           <div class="col-6 col-lg-3">
             <a href="<?=WEBROOT.''?>">
-              <img src="<?= IMAGE ?>images/logo.png" alt="Logo du club" class="img-fluid">
+              <img src="<?= IMAGE ?>images/logo.png" alt="Logo ES Bonchamp Tdt" class="img-fluid">
             </a>
           </div>
           <div class="col-lg-3 d-none d-lg-block">
@@ -97,11 +108,11 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                       Le Club
                     </a>
-                  <div class="dropdown-menu lecentre2" aria-labelledby="navbarDropdown">
+                  <div class="dropdown-menu lecentre2">
                     <a class="dropdown-item" href="<?=WEBROOT.'bureau'?>">Bureau</a>
                     <a class="dropdown-item" href="<?=WEBROOT.'salle'?>">Salle</a>
                     <a class="dropdown-item" href="<?=WEBROOT.'entrainements'?>">Entraînements</a>
-                    <a class="dropdown-item" href="<?=WEBROOT.'licences'?>">Licences</a>
+                    <a class="dropdown-item" href="<?=WEBROOT.'licence'?>">Licence</a>
                     <a class="dropdown-item" href="<?=WEBROOT.'boutique'?>">Boutique</a>
                     <a class="dropdown-item" href="<?=WEBROOT.'evenements'?>">Événements</a>
                   </div>
@@ -110,10 +121,10 @@
                   <li><a href="<?=WEBROOT.'media'?>">Média</a></li>
                   <li><a href="<?=WEBROOT.'contact'?>">Nous contacter</a></li>
                     <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Liens Utiles
                       </a>
-                    <div class="dropdown-menu lecentre2" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu lecentre2">
                       <a class="dropdown-item" href="http://www.fftt.com/site/">FFTT</a>
                       <a class="dropdown-item" href="https://tennisdetablepaysdelaloire.org">Ligue TDT Pays de la Loire</a>
                       <a class="dropdown-item" href="https://www.cd53tt.com">Comité TDT de la Mayenne</a>
@@ -147,7 +158,7 @@
           <a href="https://www.facebook.com/esbonchamptt/"><i class="icon-facebook-square" title="Facebook"></i></a>
             <footer>
             <!-- Copyright -->
-            Développé par : Bastien Mézière &copy;<script>document.write(new Date().getFullYear());</script> ES Bonchamp Tennis de Table | <a class="connexion" href="<?=WEBROOT.'mentionlegale'?>">Mentions Légales</a> | <a class="connexion" href="<?=WEBROOT.'connexion'?>">Connexion</a>
+            ES Bonchamp Tennis de Table &copy;<script>document.write(new Date().getFullYear());</script> | <a class="connexion" href="<?=WEBROOT.'mentionlegale'?>">Mentions Légales</a> | <a class="connexion" href="<?=WEBROOT.'connexion'?>">Connexion</a>
             <!-- Copyright -->
             </footer>
         </div>
@@ -159,21 +170,22 @@
 
   <!-- Loader -->
   <div id="loader" class="show fullscreen col-12"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#096BDC"/></svg></div>
+  <!-- Fin Loader -->
 
-  <script src="<?= SCRIPT ?>jquery-3.3.1.min.js"></script>
-  <script src="<?= SCRIPT ?>jquery-migrate-3.0.1.min.js"></script>
-  <script src="<?= SCRIPT ?>jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.2/jquery-migrate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   <script src="<?= SCRIPT ?>owl.carousel.min.js"></script>
-  <script src="<?= SCRIPT ?>jquery.stellar.min.js"></script>
-  <script src="<?= SCRIPT ?>jquery.countdown.min.js"></script>
-  <script src="<?= SCRIPT ?>bootstrap-datepicker.min.js"></script>
-  <script src="<?= SCRIPT ?>jquery.easing.1.3.js"></script>
-  <script src="<?= SCRIPT ?>aos.js"></script>
-  <script src="<?= SCRIPT ?>jquery.fancybox.min.js"></script>
-  <script src="<?= SCRIPT ?>jquery.sticky.js"></script>
-  <script src="<?= SCRIPT ?>jquery.mb.YTPlayer.min.js"></script>
+  <script src="<?= SCRIPT ?>loader.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/stellar.js/0.6.2/jquery.stellar.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.countdown/2.2.0/jquery.countdown.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.sticky/1.0.4/jquery.sticky.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mb.YTPlayer/3.3.9/jquery.mb.YTPlayer.min.js"></script>
   <script src="<?= SCRIPT ?>main.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <!-- Cookie Consent -->
@@ -195,7 +207,7 @@
     "message": "L'ES Bonchamp Tennis de table utilise des cookies essentiels pour vous garantir le bon fonctionnement du site.",
     "dismiss": "D'accord",
     "link": "En savoir plus",
-    "href": "https://www.esbonchamp-tdt.fr/mentionlegale"
+    "href": "http://esb-tdt-local.test/mentionlegale"
   }
   });
   </script>
