@@ -22,12 +22,6 @@
                     <a href="<?=WEBROOT.'admin/gestionproduit'?>">-> Gérer les produits (Boutique)</a>
                 </div>
                 <div class="row">
-                    <a href="<?=WEBROOT.'admin/gestionresultatmatch'?>">-> Gérer les derniers résultats (Accueil)</a>
-                </div>
-                <div class="row">
-                    <a href="<?=WEBROOT.'admin/gestionprochainmatch'?>">-> Gérer les prochains matchs (Accueil)</a>
-                </div>
-                <div class="row">
                     <a href="<?=WEBROOT.'admin/gestionbureau'?>">-> Gérer les membres du bureau (Bureau)</a>
                 </div>
                 <div class="row">
@@ -47,6 +41,9 @@
                 </div>
                 <div class="row">
                     <a href="<?=WEBROOT.'admin/gestionmedia'?>">-> Gérer les médias (Média)</a>
+                </div>
+                <div class="row lamargetrois">
+                    <a href="<?=WEBROOT.'admin/gestionslide'?>">-> Gérer les slides (Accueil)</a>
                 </div>
                 <div class="row lamargetrois">
                     <a href="<?=WEBROOT.'admin/gestionevenement'?>">-> Gérer les événements (Événements)</a>
