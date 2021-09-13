@@ -31,7 +31,7 @@ class Connexion extends Controller
             $this->render('admin');
         }else{
             $_SESSION['danger'] = 1;
-            header('Location: https://www.esbonchamp-tdt.fr/connexion');
+            header('Location: http://esb-tdt-local.test/connexion');
         }
         
         //$this-> set($tableRes);
@@ -41,7 +41,7 @@ class Connexion extends Controller
     function logout($personne=null){
 
         session_destroy();
-        header('Location: https://www.esbonchamp-tdt.fr/connexion');
+        header('Location: http://esb-tdt-local.test/connexion');
         exit;
     }
 
