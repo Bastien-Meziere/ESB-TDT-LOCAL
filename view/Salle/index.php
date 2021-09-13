@@ -9,12 +9,10 @@
     </div>
     <div class="site-section">
       <div class="container">
-        <?php
-              foreach($variabledix['lasalle'] as $ligne) {
-        ?>
+        <?php foreach($variabledix['lasalle'] as $ligne): ?>
         <div class="row">
           <div class="lamarge2 col-lg-6 mb-5 mb-lg-0 order-lg-2">
-            <img src="<?= IMAGE ?>images/<?= $ligne->img_photosalle?>" alt="Salle" class="img-fluid1">
+            <img src="<?= IMAGE ?>images/<?= $ligne->img_photosalle?>" alt="Salle du club ES Bonchamp Tdt" class="img-fluid">
           </div>
           <div class="margeproduit col-lg-4 mr-auto rectangle">
             <div class="col-12">
@@ -23,7 +21,7 @@
             </div>
           </div>
         </div>
-        <?php } ?>
+        <?php endforeach ?>
       </div>
     </div>
   </div>

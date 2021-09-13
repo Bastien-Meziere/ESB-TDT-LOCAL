@@ -12,19 +12,17 @@
 
 <div class="container-fluid">
   <div class="row">
-    <?php
-          foreach($variablequatorze['evenement'] as $ligne) {
-    ?>
+    <?php foreach($variablequatorze['evenement'] as $ligne): ?>
     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mb-lg-0 text-center">
       <div class="rectangle2">
         <div class="site-section services-1-wrap">
           <figure>
-            <img class="affichetournoi img-fluid" src="<?= IMAGE ?>images/<?= $ligne->img_photoevenement?>" >
+            <img class="affichetournoi img-fluid" src="<?= IMAGE ?>images/<?= $ligne->img_photoevenement?>">
           </figure>
           <p class="jourj"><?= $ligne->desc_evenement ?></p>
         </div>
       </div>
     </div>
-    <?php } ?>
+    <?php endforeach ?>
   </div>
 </div>

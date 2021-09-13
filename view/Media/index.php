@@ -12,18 +12,16 @@
 <!-- Les titres + les images sur la page "Média" -->
 <div class="container-fluid">
   <div class="row">
-    <?php
-          foreach($variablequinze['mediaa'] as $ligne) {
-    ?>
+    <?php foreach($variablequinze['mediaa'] as $ligne): ?>
   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 text-center">
     <div class="site-section services-1-wrap">
       <h1 class="section-subtitle5 ml-auto mr-auto center"><?= $ligne->nom_media ?></h1>
       <div class="person">
-        <a href="<?= IMAGE ?>images/<?= $ligne->img_photomedia?>" target="_blank"><img src="<?= IMAGE ?>images/<?= $ligne->img_photomedia?>" class="img-fluid"></a>
+        <a href="<?= IMAGE ?>images/<?= $ligne->img_photomedia?>" target="_blank"><img src="<?= IMAGE ?>images/<?= $ligne->img_photomedia?>" class="img-fluid" alt="Presse ES Bonchamp Tdt"></a>
       </div>
     </div>
   </div>
-    <?php } ?>
+    <?php endforeach ?>
   </div>
 </div>
 <!-- Fin Les titres + les images sur la page "Média" -->
