@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
         header('Location: http://esb-tdt-local.test/contact');
     }else{
         // On prépare l'URL
-        $url = "https://www.google.com/recaptcha/api/siteverify?secret=6LfN_lYcAAAAAKAxRmufy9AkGIDEGL4N1LMwhVk9&response={$_POST['recaptcha-response']}";
+        $url = "https://www.google.com/recaptcha/api/siteverify?secret=&response={$_POST['recaptcha-response']}";
 
         // On vérifie si curl est installé
         if(function_exists('curl_version')){
